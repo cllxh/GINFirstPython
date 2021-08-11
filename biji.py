@@ -236,12 +236,9 @@
 # a,b=b,a # 交换
 # print('交换之后',a,b)   # 交换之后 20 10
 
-#a=1
-#b='输入数字'
-
-#input(b)
-
-#print(int(b)-a)
+a=1
+b=input('请输入数字')
+print(int(b)-a)
 
 
 
