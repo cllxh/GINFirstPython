@@ -242,12 +242,76 @@
 
 # ctrl+/ 快速注释
 
+## 比较运算符 >,<,>=,<=,==,!=,is,is not
+# a,b=10,20
+# print('a>b?',a>b) #False
+# print('a<b',a<b) #True
+# print('a<=b?',a<=b) #True
+# print('a>=b?',a>=b) #False
+# print('a==b?',a==b) #False
+# print('a!=b?',a!=b) #True
 
+'''
+一个 = 称为赋值运算符，==称为比较运算符
+一个变量由三部分组成，标识，类型，值
+==比较的是值还是表示？比较的是值
+比较对象的标识使用 is
+因为a=10这个变量，里面包含了ID和类型，值
+看下面的例子
+'''
+# a=10
+# b=10
+# print(a==b) #True 说明，a与b的value 相等
+# print(a is b) #True 说明，a与b的id标识，相等
 
+# lst1=[11,22,33,44]
+# lst2=[11,22,33,44]
+# print(lst1==lst2) #True
+# print(lst1 is lst2) #False 虽然内容都一样，但是他们的ID是不同的
+# print(id(lst1)) #2403143134208
+# print(id(lst2)) #2403147649152
+# print(lst1 is not lst2) # is not:是不相等的嘛？
 
+## 布尔运算符 and是与，or是或，not是非
+# a,b=1,2
+# and
+# print(a==1 and b==2) # True,and的意思两边都需要符合才是True
+# print(a==1 and b<2) # False,因b=2,不小于2
+# print(a!=1 and b==2) # False,因a==1
+# or
+# print(a==1 or b==2) # True,or的意思两边当中满足一个即可
+# print(a==1 or b<2) # True,因a==1
+# print(a!=1 or b==2) # True，因b==2
+# print(a!=1 or b!=2) # False,因两边都不满足
+# not 取反，对就是错，错就是对，对bool类型操作数取反
+# f1=True
+# f2=False
+# print(not f1) # False
+# print(not f2) # True
+# in 判断是否包含
+# lst1=[1,2,3,4,5]
+# print(1 in lst1) # True
+# print(10 in lst1) # False
+# print(1 not in lst1) # False
+# print(10 not in lst1) # True
+# lmy='helloworld'
+# print('s' in lmy) # False
+# print('o' in lmy) # True
 
-
-
+## 位运算符 将数据转为二进制进行计算
+'''
+&:对应数位都是1，才为1
+|：对应数位都是0，才为0
+<<:左移位运算符，向左移动位置，高位溢出，低位补0,向左移动n位，没有1溢出的时候结果就是乘以2^n
+>>:右移位运算符，向右移动未知，低位溢出，高位补0,向右移动n位，没有1溢出的时候结果就是除以2^n
+'''
+# print(4&8) # 00000100 & 00001000 = 00000000 = 0
+# print(4&6) # 00000100 & 00000110 = 00000100 = 4
+# print(4|8) # 00000100 | 00001000 = 00001100 = 12
+# print(4<<1) # 00000100 << 1 = 00001000 = 8
+# print(4<<2) # 00000100 << 2 = 00010000 = 16
+# print(4>>1) # 00000100 >> 1 = 00000010 = 2
+# print(4>>2) # 00000100 >> 2 = 00000001 = 1
 
 
 
