@@ -350,19 +350,74 @@
 # print(bool(dict())) # 空字典
 # print(bool(set())) # 空集合
 
+## 选择结构
+#单分支结构
+# balance=1000 # 余额
+# WM=int(input('请输入取款金额'))
 
+# if balance >= WM:
+#     balance=balance-WM
+#     print('您已取款',WM,'元')
+#     print("余额：",balance)
 
+#双分支结构
+# a=int(input('请从键盘录入一个整数'))
 
+# if a%2 == 0:
+#     print('您输入的数是一个偶数')
+# else:
+#     print('您输入的数是一个奇数')
 
+#多分支结构
+# achievement=int(input('请输入您的成绩'))
 
+# if achievement == 100:
+#     print('恭喜您，您可是真是个天才')
+# elif 80<= achievement <=99:
+#     print('可以可以，有点厉害')
+# elif 60<= achievement <=79:
+#     print('再接再厉')
+# elif achievement <60 and achievement >= 0:
+#     print('不会吧不会吧，不会真的有人不及格吧')
+# else:
+#     print('总分100，请输入0-100以内的数字')
 
+#嵌套if
+#判断是否会员，并对应价格进行折扣
+# A=1234 #会员
+# B=4321 #非会员
+# Total_price=float(input('请输入总价'))
+# C=int(input('请输入账号'))
 
+# if C == A:
+#     if 100<= Total_price <= 1000:
+#         Total_price = Total_price*0.9
+#         print (Total_price,'9折优惠')
+#     elif 1001<= Total_price <= 5000:
+#         Total_price = Total_price*0.75
+#         print (Total_price,'7.5折优惠')
+#     elif 5001<= Total_price <=10000:
+#         Total_price = Total_price*0.65
+#         print (Total_price,'6.5折优惠')
+#     else:
+#         print('不好意思，您输入的价格不在此次活动范围，请咨询前台工作人员获得帮助')
+# else:
+#     print('不好意思，您不是会员，不能参与折扣活动')
 
+## 条件表达式
+# num_a=int(input('第一个数'))
+# num_b=int(input('第二个数'))
 
+# print('使用条件表达式进行比较') #前半部分为True,中间为判断规则，后半部分为False
+# print(str(num_a)+'大于'+str(num_b) if num_a>num_b else str(num_a)+'小于'+str(num_b) ) #此处牢记，如果需要数字加中文进行输出，先将数字变量转为字符串类型，然后再链接
 
+## pass 语句，什么都不做,只是一个占位符,用于需要写语句的地方
+# a=int(input('请从键盘录入一个整数'))
 
-
-
+# if a%2 == 0:
+#     pass #此处语法不报错
+# else:
+#     print('您输入的数是一个奇数')
 
 
 
