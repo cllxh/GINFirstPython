@@ -485,13 +485,79 @@
     #     sum-=1
 # print(sum)
 
+## for-in循环
+'''
+·in:表达从(字符串、序列等)中依次取值，又称为遍历
+ for-in遍历的对象必须是可迭代对象
+·for-in的语法结构:for 自定义的变量 in 可迭代的对象:循环体
+'''
 
+# for item in 'Python': # 第一次取出来的是P，将P赋值item，将item输出，第二次取出来的是y，将y赋值item，将item输出，依此类推
+#     print(item)
 
+#range() 产生一个整数序列,也是一个可迭代对象
+# for i in range(2,10,2):
+#     print(i)
 
+#如果在循环体中不需要使用到自定义变量,可将自定义变量写为“_”
+# for _ in range(5):
+#     print('人生苦短,我用Python')
 
+#test:使用for循环,计算1到100之间的偶数和
+sum=0
+#第一种写法
+# for i in range(2,102,2):
+#     if i != 100:
+#         sum+=i
+#     else:
+#         print(sum)
 
+#第二种写法
+# for i in range(1,100):
+#     if i%2==0:
+#         sum+=i
+# print(sum)
 
+#第三种写法
+# for i in range(1,100):
+#     if i%2!=0:
+#         sum+=i
+#         sum-=1
+# print(sum)
 
+#test:输出100到999之间的水仙花数 ps:"所谓的“水仙花数”是指一个三位数其各位数字的立方和等于该数本身，例如153是“水仙花数”，因为：153 = 1³ + 5³ + 3³。"
+# for item in range(100,1000):
+#     g=item%10       #取个位的数
+#     s=item//10%10   #取十位的数
+#     b=item//100     #取百位的数
+#     if g**3+s**3+b**3==item: # 如何幂运算 **
+#         print(item)
+
+#幂运算例子：
+# for i in range(1,20):
+#     i=i**2
+#     print(i)
+
+#break 循环结束语句,看下方两个程序的不同,没有break会一直继续执行下去,有break则结束
+# password=int(1999)
+# for pw in range(1800,2100):
+#     if pw == password:
+#         print(pw)
+#     elif pw == 1806:
+#         print('error')
+#error
+#1999
+
+# password=int(1999)
+# for pw in range(1800,2100):
+#     if pw == password:
+#         print(pw)
+#     elif pw == 1806:
+#         print('error')
+#         break
+# #error
+        
+        
 
 
 
