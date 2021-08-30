@@ -504,7 +504,7 @@
 #     print('人生苦短,我用Python')
 
 #test:使用for循环,计算1到100之间的偶数和
-sum=0
+# sum=0
 #第一种写法
 # for i in range(2,102,2):
 #     if i != 100:
@@ -525,7 +525,7 @@ sum=0
 #         sum-=1
 # print(sum)
 
-#test:输出100到999之间的水仙花数 ps:"所谓的“水仙花数”是指一个三位数其各位数字的立方和等于该数本身，例如153是“水仙花数”，因为：153 = 1³ + 5³ + 3³。"
+## test:输出100到999之间的水仙花数 ps:"所谓的“水仙花数”是指一个三位数其各位数字的立方和等于该数本身，例如153是“水仙花数”，因为：153 = 1³ + 5³ + 3³。"
 # for item in range(100,1000):
 #     g=item%10       #取个位的数
 #     s=item//10%10   #取十位的数
@@ -538,7 +538,7 @@ sum=0
 #     i=i**2
 #     print(i)
 
-#break 循环结束语句,看下方两个程序的不同,没有break会一直继续执行下去,有break则结束
+## break 循环结束语句,看下方两个程序的不同,没有break会一直继续执行下去,有break则结束
 # password=int(1999)
 # for pw in range(1800,2100):
 #     if pw == password:
@@ -557,19 +557,64 @@ sum=0
 #         break
 # #error
         
-        
+##continue 用于结束当前循环，进入下一次循环，通常与分支结构中的if一起使用
+#输出1到50之间的所有5的倍数,要求使用continue
+# for i in range(1,51):
+#     if i%5==0:
+#         print(i)
+
+#使用continue
+# for i in range(1,51):
+#     if i%5!=0:
+#         continue
+#     print(i)
+
+''' 
+else:与else语句搭配使用的三种情况
+1、if else，if条件表达式不成立时执行else
+2、while else，没有碰到break时执行else，简单点说就是没有break的话，就会循环完执行else
+3、for else，没有碰到break时执行else，简单点说就是没有break的话，就会循环完执行else
+'''
+## for else
+# for i in range(3):
+#     pwd=int(input('please input your password'))
+#     if pwd == 8888:
+#         print('right')
+#         break
+#     else:
+#         print('error')
+# else:
+#     print('your try too more error,please wait')
 
 
+## while else
+# a=0
+# while a<3:
+#     pwd=int(input('please input your password'))
+#     if pwd == 8888:
+#         print('right')
+#         break
+#     else:
+#         print('error')
+#         a+=1
+# else:
+#     print('your try too more error,please wait')
 
+## 嵌套结构,套娃循环
+#输出一个三行四列的矩形
+#tips:end='\t'就是不换行的意思，下一行print()是换行的意思
+# for i in range(1,4):
+#     for a in range(1,5):
+#         print('*',end='\t')
+#     print()
 
-
-
-
-
-
-
-
-
+#输出九九乘法表
+# c=0
+# for i in range(1,10):
+#     for a in range(1,i+1): #为什么是i+1?因为range(1,2)等于输出 1 ，range(1,3)等于输出1,2,所以我们需要i+1,而不是加0，此处建议加上断点运行方便理解
+#         c=a*i
+#         print(a,'*',i,'=',c,end='\t')
+#     print()
 
 
 
