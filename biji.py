@@ -616,44 +616,107 @@ else:与else语句搭配使用的三种情况
 #         print(a,'*',i,'=',c,end='\t')
 #     print()
 
+## tips:Python中一切皆对象
 
+## 列表的查询操作
+'''
+index()
+1. 如查询列表中存在N个相同元素，只返回相同元素中的第一个索引
+2. 如查询的元素不存在，则会抛出ValueError
+3. 还可以在指定的satrt和stop之间进行查找
 
+获取单个元素
+1. 正向索引从0到N-1 举例:lst[0]
+2. 逆向索引从N-1到0 举例:lst[-N]
+3. 指定索引不存在，抛出IndexError
+'''
+# lst1=['hello','world',66,'world'] # 正的:0→hello,1→world,2→66 反的:-1→66,-2→world,-3→hello, 每个元素都有索引,正的:0,1,2,3,4..... 反的:-1,-2,-3,-4.........
+# lst2=list(['hello','lxh',25]) # 列表的两种写法
 
+# print(lst1[1]) # world
+# print(lst1.index('world')) # 1,即使有两个world他也只会输出第一个
+# print(lst1.index('world',0,4,)) # 1,指定start和stop之间查找
+# # print(lst2[6]) # IndexError:list index out of range,表示查询的索引不存在列表中
+# # print(lst1.index('lxh')) #ValueError:'lxh' is not in list,表示查询的元素不在列表中
 
+# lst3=[10,20,30,40,50,60,70,80]
+# print(lst3[1:6:2]) # 第一个数字是开始,第二个数字是结束,记住左开右闭,第三个数字是步长
+# lst2=(lst3[1:6:1])
+# print(lst3,id(lst3)) # [10, 20, 30, 40, 50, 60, 70, 80] 1799909026816
+# print(lst2,id(lst2)) # [20, 30, 40, 50, 60] 1799909347392
+# 正数:
+# 默认步长
+# print(lst3[1:6:]) # [20, 30, 40, 50, 60]
+# 默认起始
+# print(lst3[:6:1]) # [10, 20, 30, 40, 50, 60]
+# 默认结束
+# print(lst3[1::1]) # [20, 30, 40, 50, 60, 70, 80]
+# 负数:
+# 步长为负数
+# print(lst3[::-1]) # [80, 70, 60, 50, 40, 30, 20, 10]
+# print(lst3[7::-1]) # [80, 70, 60, 50, 40, 30, 20, 10]
 
+# 判断元素是否在列表当中
+# lst4=[10,20,'python','hello']
+# print(10 in lst4) # True
+# print(10 not in lst4) # False
+#列表元素的遍历
+# for item in lst4:
+#     print(item)
 
+## 列表元素的增加操作
+# 列表的末尾添加一个元素
+# lst5=[1,2,3,4,5]
+# lst6=[5,4,'hello','lxh']
+# print(lst5,id(lst5)) # [1, 2, 3, 4, 5] 2578291174400
+# lst5.append(10) # 尾部加一个10元素
+# print(lst5,id(lst5)) # [1, 2, 3, 4, 5, 10] 2578291174400
+# 列表的末尾添加多个元素 extend()
+# lst5.append(lst6) # [1, 2, 3, 4, 5, [5, 4, 'hello', 'lxh']]
+# lst5.extend(lst6) # [1, 2, 3, 4, 5, 5, 4, 'hello', 'lxh']
+# 列表指定位置插入元素 insert()
+# lst5.insert(2,2.5) # [1, 2, 2.5, 3, 4, 5]
+# 切片,在列表的指定位置插入覆盖多个元素
+# lst5[3:]=lst6 # [1, 2, 3, 5, 4, 'hello', 'lxh'],3指的就是从第三个数开始插入
+# print(lst5)
 
+## tips:快速创建列表
+# lst7 = [i for i in range(10)] 
+# print(lst7) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+# lst7 = []
+# for i in range(10):
+#     lst7.append(i)
+# print(lst7) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+# lst7 = []
+# for i in range(10):
+#     lst7 += [i]
+# print(lst7) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+# i=-1
+# lst7=[]
+# while i < 9:
+#  i+=1
+#  lst7.append(i)
+# print(lst7) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## 列表元素的删除操作
+# lst7 = [i for i in range(10)] 
+# lst7.remove(5) # 移除为5的元素,如果有多个重复元素,只会移除第一个,如果元素不存在则会ValueError
+# print(lst7) # [0, 1, 2, 3, 4, 6, 7, 8, 9]
+# lst7.pop(5) # 移除索引为5的元素,如果移除的索引不存在,将抛出异常
+# print(lst7) # [0, 1, 2, 3, 4, 6, 7, 8, 9]
+# lst7.pop() # 如果不写东西,则默认移除最后一个数
+# print(lst7) # [0, 1, 2, 3, 4, 5, 6, 7, 8]
+# lst8=lst7[1:5] # 对列表进行切片,切片后会产生新的对象
+# print(lst8) # [1, 2, 3, 4]
+# lst7[1:5]=[] # 对列表进行切片删除,并用空列表替代,从而不会产生新的对象
+# print(lst7) # [0, 5, 6, 7, 8, 9]
+# lst7.clear() # 清楚列表中的所有元素
+# print(lst7)
+# del lst7 # 直接删除列表,使之报错
+# print(lst7) # NameError: name 'lst7' is not defined
 
 
 

@@ -9,3 +9,5 @@ Hello,this is from GIN first start learn Python demo,I hope my demo can help you
 2021-08-24 00:45:Hello everyone,update φ(゜▽゜*)♪
 
 2021-08-31 01:24:Tomorrow I will go to that strange and familiar place. The strangeness lies in where I don't belong, and the familiarity lies in where I work,the place is tengxun,goodnight
+
+2021-09-01 01:23:世界上所有的悲剧都是当事人能力不足而导致的.
