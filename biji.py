@@ -752,14 +752,46 @@ index()
 # scores={'l':133,'x':114,'h':8030} # {'l': 133, 'x': 114, 'h': 8030}
 #第一种方式:
 # print(scores['h'])
+# print(scores['q']) #如果查找的键不存在,报KeyError错误
 
+#第二种方式：
+# print(scores.get('h'))
+# print(scores.get('q')) #如果查找的键不存在,默认返回None
+# print(scores.get('q',99)) #并且get可以设置查找不到key的返回值，比如:这里我们设置,查找不到q,则返回99
 
+#这两种方式的不同之处在于,如果查找的键不存在,[]的方式会报错,但是get方式不会报错
 
+# key的判断
+# scores={'l':133,'x':114,'h':8030} # {'l': 133, 'x': 114, 'h': 8030}
+# print('q'in scores) # q在scores字典中? False
+# print('q' not in scores) # q不在scores字典中? True
 
+# key的删除
+# del scores['l']
+# print(scores) #  {'x': 114, 'h': 8030}
 
+# 清空字典
+# scores.clear()
+# print(scores)
 
+# key的增加
+# scores['y']=189
+# print(scores)
 
+# key的修改
+# scores['l']=189
+# print(scores)
 
+# 键盘输入一个数并储存到字典里面
+# scores['y']=(input('请输入'))
+# print(scores)
+
+# 循环输入十个数到字典里面
+# scores={}
+# for i in range(1,11):
+#     scores[i]=input('请输入')
+#     print(i)
+# print(scores)
 
 
 
