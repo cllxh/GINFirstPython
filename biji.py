@@ -702,7 +702,7 @@ index()
 # print(lst7) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 ## 列表元素的删除操作
-# lst7 = [i for i in range(10)] 
+# lst7 = [i for i in range(1,10,2)] 
 # lst7.remove(5) # 移除为5的元素,如果有多个重复元素,只会移除第一个,如果元素不存在则会ValueError
 # print(lst7) # [0, 1, 2, 3, 4, 6, 7, 8, 9]
 # lst7.pop(5) # 移除索引为5的元素,如果移除的索引不存在,将抛出异常
@@ -717,6 +717,52 @@ index()
 # print(lst7)
 # del lst7 # 直接删除列表,使之报错
 # print(lst7) # NameError: name 'lst7' is not defined
+
+## 列表元素的修改操作
+# lst8=[1,2,3,4,5,6,7,8,9,10]
+#第一种修改方式,通过修改索引的方式
+# lst8[2]=10
+# print(lst8)
+#第二种修改方式,批量修改
+# lst8[1:4]=[10,20,30,40,50]
+# print(lst8)
+
+## 列表的排序方式
+# lst9 = [1,9,7,5,4,8,3,2,6] 
+#第一种:由大到小排序 sort()
+# lst9.sort(reverse=True) #从大到小,降序排序，反过来reverse=False就是升序排序
+# print(lst9)
+#第二种:由大到小排序 sorted,此方法会产生新的列表对象
+# lst10=sorted(lst9) # 默认从小到大
+# lst10=sorted(lst9,reverse=True) #加上reverse=True就变成了降序排序
+# print(lst9,id(lst9))
+# print(lst10,id(lst10))
+
+## 字典 特点:不可变序列,hash(key)不变
+#字典创建方式一:
+# scores={'l':133,'x':114,'h':8030} # {'l': 133, 'x': 114, 'h': 8030}
+#字典创建方式二：
+# scores=dict(name='jack',age=10) # {'name': 'jack', 'age': 10}
+# print(scores)
+#空字典:
+# d={}
+# print(d)
+
+## 获取字典中的元素
+# scores={'l':133,'x':114,'h':8030} # {'l': 133, 'x': 114, 'h': 8030}
+#第一种方式:
+# print(scores['h'])
+
+
+
+
+
+
+
+
+
+
+
 
 
 
