@@ -744,11 +744,12 @@ index()
 #字典创建方式二：
 # scores=dict(name='jack',age=10) # {'name': 'jack', 'age': 10}
 # print(scores)
+#字典创建方式三：828-838行
 #空字典:
 # d={}
 # print(d)
 
-## 获取字典中的元素
+## 获取字典中的value
 # scores={'l':133,'x':114,'h':8030} # {'l': 133, 'x': 114, 'h': 8030}
 #第一种方式:
 # print(scores['h'])
@@ -792,6 +793,126 @@ index()
 #     scores[i]=input('请输入')
 #     print(i)
 # print(scores)
+
+## 获取字典视图,Keys() 获取字典中所有key,values() 获取字典中所有value,items() 获取字典中所有key,value对。
+# scores={'l':133,'x':114,'h':8030} # {'l': 133, 'x': 114, 'h': 8030}
+
+# 获取所有的key
+# keys=scores.keys()
+# print(keys)
+# print(type(keys))
+# print(list(keys)) # 将所有的可以组成的视图转成列表
+
+# 获取所有的value
+# values=scores.values()
+# print(values)
+# print(type(values))
+# print(list(values))
+
+# 获取所有的key-value对
+# items=scores.items()
+# print(items)
+# print(list(items)) # ()元组
+
+# 字典匀速的遍历
+# for item in scores:
+#     print(item,scores[item],scores.get(item))
+
+'''
+字典的特点 总结:
+· 字典中的所有元素都是一个key-value对，key不允许重复，value可以重复
+· 字典中的元素是无序的，如果需要插入元素，不能指定位置插入，列表可以
+· 字典中的key必须是不可变对象，列表是可变对象
+· 字典也可以根据需要动态地伸缩
+· 字典会浪费较大的内存，是一种使用内存换时间的数据结构，但是字典查找快
+'''
+## 字典生成式
+# items=['Fruits','Books','Others']
+# prices=[96,78,85]
+
+# lxh=zip(items,prices) # 列表
+# print(list(lxh))
+
+# lxh={item:price   for item,price in zip(items,prices)} # {'Fruits': 96, 'Books': 78, 'Others': 85}
+# lxh={item:prices  for item,price in zip(items,prices)} # {'Fruits': [96, 78, 85], 'Books': [96, 78, 85], 'Others': [96, 78, 85]}
+# lxh={item.upper():price  for item,price in zip(items,prices)} # {'FRUITS': 96, 'BOOKS': 78, 'OTHERS': 85}
+# print(lxh)
+
+## 元组
+'''
+元组：Python内置的数据结构之一，是一个不可变序列
+
+不可变序列与可变序列
+· 不可变序列：字符串、元组
+    · 没有增、删、改的操作
+· 可变序列：列表、字典
+    · 可以对序列执行增、删、改操作，对象地址不发生更改
+'''
+
+## 元组创建方式
+# 一、小括号
+# l=('l','x','h',2012)
+
+# 二、不加括号
+# l='l','x','h'
+
+# 三、内置函数tuple()
+# l=tuple(('l','x','h',2012))
+
+# 如果元组中只有一个元素，那么逗号不能省
+# l=('lxh',)
+# print(l)
+# print(type(l))
+
+# 空元组创建方式
+# a=tuple()
+# a=()
+# print(a)
+# print(type(a))
+
+'''
+提问为什么需要将元组设计成不可变序列?
+因为在多任务环境下，同时操作对象时不需要加锁，因此，在程序中尽量使用不可变序列
+
+注意事项：元组中存储的是对象的引用
+    (a)如果元组中的对象本身不可变对象，则不能再引用其它对象
+    (b)相反，如果元组中的对象是可变对象，则可变对象的引用不允许改变，但是数据可以更改
+'''
+# 例子：
+# a=(10,[20,30],40) # (10, [20, 30], 40)
+# a[1].append(35) # (10, [20, 30, 35], 40)
+# print(a)
+
+# 元组遍历
+# a=(10,[20,30],40)
+# for item in a:
+#     print(item)
+
+## 集合
+'''
+· Python语言提供的内置数据结构
+· 与列表、字典一样都属于可变类型的序列
+· 集合是没有value的字典
+· 集合中的元素不允许重复，如果有会去重
+'''
+
+# 字典生成方式：
+# l={'a','b','c'}
+# l=set(range(6))
+# l=set([9,8,7,6,5,4,3,2,1]) # {1, 2, 3, 4, 5, 6, 7, 8, 9}
+# l=set((9,8,7,6,5,4,3,100)) # {3, 4, 5, 6, 7, 8, 9, 100}
+# l=set('python') # {'p', 't', 'n', 'o', 'h', 'y'}
+# l=set({12,13,14,15,6,5,4,3}) # {3, 4, 5, 6, 12, 13, 14, 15}
+# print(l)
+# print(type(l))
+
+# 空集合
+# l=set()
+# print(type(l))
+
+
+
+
 
 
 
